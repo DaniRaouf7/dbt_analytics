@@ -1,2 +1,4 @@
-select *
-from {{source('landing', 'orders')}}
+select 
+*
+from 
+{{source('landing', 'orders')}}
