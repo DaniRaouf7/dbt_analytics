@@ -1,8 +1,8 @@
 select 
     id,
-    date(date_format(created_at, 'dd-MM-yyyy')) as order_date,
+    date(date_format(created_at, 'yyyy-MM-dd')) as order_date,
     user_id,
-    product_id
+    product_id,
     quantity,
     unit_price,
     (quantity * unit_price) as order_amount
