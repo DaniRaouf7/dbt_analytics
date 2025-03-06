@@ -1,3 +1,8 @@
+{{
+    config(
+        tags='contains_pii'
+    )
+}}
 select 
 *
 from 
