@@ -6,7 +6,50 @@ sources:
     schema: landing
     tables:
       - name: orders
+        columns: 
+          - name: id
+            data_tests: 
+              - unique:
+                  config:
+                    severity: warn
+              - not_null:
+                  config:
+                    severity: warn
       - name: products
+        columns:
+          - name: id
+            data_tests: 
+              - unique:
+                  config:
+                    severity: warn
+              - not_null:
+                  config:
+                    severity: warn
+              - relationships:
+                  to: ref('bronze_orders')
+                  field: product_id
+          - name: category
+            data_tests:
+              - accepted_values:
+                  values: ['Doohickey', 'Widget', 'Gizmo', 'Gadget']
       - name: reviews
+        columns:
+          - name: id
+            data_tests: 
+              - unique:
+                  config:
+                    severity: warn
+              - not_null:
+                  config:
+                    severity: warn
       - name: users
+        columns:
+          - name: id
+            data_tests: 
+              - unique:
+                  config:
+                    severity: warn
+              - not_null:
+                  config:
+                    severity: warn
       
